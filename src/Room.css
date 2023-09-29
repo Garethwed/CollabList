@@ -1,0 +1,139 @@
+:root {
+    --dark: #374151;
+    --darker:#1F2937;
+    --darkest:#0a0f14;
+    --gray:#6B7280;
+    --light:#EEE;
+    --pink:#EC4899;
+    --purple:#8B5CF6;
+    
+}
+body {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: var(--darker);
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+  }
+
+.top{
+    width: 100%;
+    height: 100px;
+    border-radius: 4px;
+    
+    background-color: var(--dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.inputField{
+    
+    height: 50px;
+    border-radius: 20px;
+    flex:1 1 0%;
+    background-color: var(--darker);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin:2rem;
+    color: var(--light);
+    font-size: 1.25rem;
+}
+.todo_container{
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darkest);
+    padding: 0.7rem;
+    padding-right: 1rem;
+    
+    border-radius: 1rem;
+    margin-bottom: 0.2rem;
+    width: 90%;
+    align-items: center;
+    border: 1px solid var(--purple);
+    border-radius: 25px;
+    margin-left: 2px;
+    word-wrap: break-word;
+    height: 30px;
+    
+}
+.buttonGroup{
+    display: flex;
+    
+}
+.todo{
+    width: 70%;
+    font-size: 20px;
+    word-wrap: break-word;
+    white-space: wrap;
+    display:inline-block;
+
+}
+.table{
+    background-color: rgb(43, 152, 160);
+    margin-top: 1rem;
+    width: 100%;
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    
+
+}
+.bottom {
+    background-color: var(--darker);
+    width: 50%;
+
+    
+}
+.bottom2 {
+    background-color: var(--darker);
+    width: 50%;
+    
+}
+
+
+.headings {
+    display: flex;
+    justify-content: space-between;
+    background-color: var(--darker);
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+
+
+}
+.columntitle{
+    flex:1 1 0%;
+    background-color: var(--darker);
+    border-radius: 1rem;
+    padding: 0rem;
+    margin-right: 1rem;
+    color: var(--light);
+    font-size: 2.25rem;
+    display: flex;
+    justify-content: center;
+}
+.delete_button {
+    background-color: transparent;
+    border: 3px solid;
+    border-radius: 35%;
+    color: var(--purple); /* Change the color to your preferred delete button color */
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s; /* Add a smooth color transition on hover */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    width: 50px;
+    padding: 1rem;
+    margin-top: 0px;
+    margin-right: 10px;
+    height: 50px;
+
+  }
+  
+  .delete_button:hover {
+    color: var(--pink); /* Change the color on hover to make it stand out more */
+  }
