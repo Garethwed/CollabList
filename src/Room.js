@@ -73,7 +73,7 @@ export function Room() {
                         return (
                         <div key={index} className="todo_container">
                             <div className="todo">{todo.text}</div>
-                            <div className="buttonGroup">
+                            <div className="buttonGroup"> 
                               <button
                               className="delete_button"
                               onClick={() => deleteTodo(index)}

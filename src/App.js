@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { RoomProvider,useUpdateMyPresence } from "./liveblocks.config";
+import { Room } from "./Room";
+import { ClientSideSuspense } from "@liveblocks/react";
+import {useState} from "react"
+import {LiveList } from "@liveblocks/client"
 
-function App() {
+
+
+export default function App() {
+  const [draft,setDraft] = useState("");
+  const updateMyPresence = useUpdateMyPresence();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <RoomProvider id="my-room" initialPresence={{}} initialStorage={{todos: new LiveList() , seen:new LiveList()}}>
+      <ClientSideSuspense fallback={<div>Loading…</div>}>
+        {() => <Room />}
+
+      </ClientSideSuspense>
+    </RoomProvider>
   );
 }
 
-export default App;
+
+
+

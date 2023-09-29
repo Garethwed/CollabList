@@ -2,16 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import reportWebVitals from './reportWebVitals';
+
+import { createClient } from '@liveblocks/client';
+import {liveblocksProvider, useOthers} from '@liveblocks/react';
+import {RoomProvider} from './liveblocks.config';
+
+
+const client = createClient({
+  publicApiKey : "pk_dev_tfiZ-KP-oDvqS69MoSBbCwEHNtFi9sZezH-bTXgD9zk_dreuyC1tQ8wlzhruGJND",
+});
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <App />
+    <liveblocksProvider client = {client}>
+      <RoomProvider id="react-list">
+      <App />
+      </RoomProvider>
+    </liveblocksProvider>
   </React.StrictMode>
 );
-
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
